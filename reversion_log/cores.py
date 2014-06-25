@@ -1,7 +1,7 @@
 from django.utils.translation import ugettext_lazy as _
 
 from is_core.main import UIRestModelISCore
-from is_core.generic_views.inline_form_views import TabularInlineFormView
+from is_core.generic_views.inlines.inline_form_views import TabularInlineFormView
 
 from .models import RevisionLog, LogVersion
 
