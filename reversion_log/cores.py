@@ -18,11 +18,11 @@ class LogIsCore(UIRestModelISCore):
 
     form_fieldsets = (
         (None, {'fields': ('date_created', 'user', 'comment')}),
-        (_('Versions'), {'inline_form_view': 'VersionInlineFormView'}),
+        (_('Versions'), {'inline_view': 'VersionInlineFormView'}),
     )
     form_readonly_fields = ('date_created', 'user', 'comment', 'serialized_data')
 
     class VersionInlineFormView(TabularInlineFormView):
         model = LogVersion
 
-    inline_form_views = [VersionInlineFormView]
+    form_inline_views = [VersionInlineFormView]
