@@ -22,7 +22,17 @@ class LogIsCore(UIRestModelISCore):
     )
     form_readonly_fields = ('date_created', 'user', 'comment', 'serialized_data')
 
+    def has_create_permission(self, request, obj=None):
+        return False
+
+    def has_update_permission(self, request, obj=None):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
     class VersionInlineFormView(TabularInlineFormView):
         model = LogVersion
+        fields = ('id', 'serialized_data')
 
     form_inline_views = [VersionInlineFormView]
