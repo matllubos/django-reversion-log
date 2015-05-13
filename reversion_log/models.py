@@ -14,6 +14,7 @@ class RevisionLog(ReversionRevision):
         proxy = True
         verbose_name = _('Log')
         verbose_name_plural = _('Log')
+        ordering = ('-pk',)
 
 
 class LogVersion(ReversionVersion):
