@@ -45,7 +45,7 @@ class RevisionsMiddleware(object):
         """Sets the version meta information."""
         revision_manager.save_revision(
             self.get_revision_data(request),
-            user=request.user,
+            user=request.user if request.user.is_authenticated() else None,
             comment=self.get_log_message(request),
             ignore_duplicates=ignore_duplicate_revisions,
             db=self.revision_context_manager.get_db(),
