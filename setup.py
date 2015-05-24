@@ -29,7 +29,7 @@ setup(
     ],
     install_requires=[
         'django>=1.6',
-        'django-reversion==1.8.0',
+        'django-reversion==1.8.7',
     ],
     zip_safe=False
 )
